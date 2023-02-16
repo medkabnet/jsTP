@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Ajoutez votre feuille de style CSS ici */
+      .task-container {
+        width: 50%;
+        margin: 0 auto;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .task {
+        padding: 10px;
+        border-bottom: 1px solid lightgray;
+      }
+
+      .task input[type="checkbox"] {
+        margin-right: 10px;
+      }
+
+      .task label {
+        cursor: pointer;
+      }
+
+      .completed {
+        text-decoration: line-through;
+        color: gray;
+      }
+
+      button {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: lightgray;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+    <title>To-Do Liste</title>
+  </head>
+  <body>
+    <div class="task-container">
+      <h1>Liste de tâches liées à la programmation</h1>
+      <div class="task">
+        <input type="checkbox" id="task-1">
+        <label for="task-1">Apprendre une nouvelle technologie</label>
+      </div>
+      <div class="task">
+        <input type="checkbox" id="task-2">
+        <label for="task-2">Mettre en œuvre une architecture logicielle</label>
+      </div>
+      <div class="task">
+        <input type="checkbox" id="task-3">
+        <label for="task-3">Résoudre un bug complexe</label>
+      </div>
+      <div class="task">
+        <input type="checkbox" id="task-4">
+        <label for="task-4">Créer une documentation claire et complète</label>
+      </div>
+      <button  id="valider" >Valider</button>
+    </div>
+    <script>
+      var toutBouton = document.getElementsByTagName("button")
+      // Une liste des element 
+      var bouton = document.getElementById("valider")
+      // un DOM avec id Valider
+      var checkbox1 = document.getElementById("task-1")
+      var checkbox2 = document.getElementById("task-2")
+      var checkbox3 = document.getElementById("task-3")
+      var checkbox4 = document.getElementById("task-4")
+      bouton.innerHTML = "Envoyer"
+      bouton.addEventListener("click",()=>{
+        //alert("Click sur bouton");
+        bouton.style.backgroundColor = "#ABC123";
+        // changer la couleur de fond
+        //console.log(checkbox1.checked);
+        // True : si le checkbox est valider
+        // false : si no valider
+        var tache = {}; // Tache est un objet Json Vide
+        if(checkbox1.checked){
+          tache.tache1 = "Valider";
+        }
+        if(checkbox2.checked){
+          tache.tache2 = "Valider";
+        }
+        if(checkbox3.checked){
+          tache.tache3 = "Valider";
+        }
+        if(checkbox4.checked){
+          tache.tache4 = "Valider";
+        }
+        console.table(tache);
+      })
+    </script>
+  </body>
+</html>
